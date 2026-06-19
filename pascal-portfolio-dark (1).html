@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAWSON BODY Laté Pascal Aménouwé — Agronomist & Agroecology Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.35.0/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0B0F0D;
+  --bg-soft:#111613;
+  --card:#141B17;
+  --line:#222B25;
+  --acid:#9FFF3D;
+  --acid-dim:#5C8F2C;
+  --text:#EDF2EE;
+  --mut:#8A968E;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
+a{color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(11,15,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;letter-spacing:-0.3px;}
+.brand .dot{width:9px;height:9px;border-radius:2px;background:var(--acid);display:inline-block;}
+.nav-links{display:flex;gap:30px;}
+.nav-links a{font-size:13px;color:var(--mut);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;background:var(--acid);color:#0B0F0D;text-decoration:none;transition:transform .15s, box-shadow .2s;}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(159,255,61,0.25);}
+
+/* HERO */
+.hero{min-height:92vh;display:flex;align-items:center;padding:140px 5% 80px;position:relative;background:
+  radial-gradient(ellipse 700px 500px at 85% -5%, rgba(159,255,61,0.10), transparent 60%);
+}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(159,255,61,0.035) 1px, transparent 1px),linear-gradient(90deg, rgba(159,255,61,0.035) 1px, transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom, black, transparent 70%);pointer-events:none;}
+.hero-inner{max-width:1180px;margin:0 auto;width:100%;position:relative;z-index:1;display:flex;align-items:center;gap:60px;}
+.hero-text{flex:1;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--acid);border:1px solid var(--acid-dim);background:rgba(159,255,61,0.06);padding:6px 14px;border-radius:100px;margin-bottom:28px;}
+.hero h1{font-size:clamp(34px,4.8vw,56px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:22px;}
+.hero h1 .hl{color:var(--acid);}
+.hero p{font-size:15.5px;color:var(--mut);max-width:520px;margin-bottom:36px;}
+.hero-btns{display:flex;gap:14px;margin-bottom:64px;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--acid);color:#0B0F0D;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:transform .15s,box-shadow .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(159,255,61,0.25);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid var(--line);color:var(--text);border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:border-color .2s,background .2s;}
+.btn-ghost:hover{border-color:var(--acid-dim);background:var(--bg-soft);}
+
+.logos{display:flex;align-items:center;gap:32px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:32px;}
+.logos span{font-size:12.5px;font-weight:600;color:var(--mut);letter-spacing:0.3px;opacity:0.75;}
+
+.hero-avatar-wrap{flex-shrink:0;position:relative;}
+.hero-avatar{width:240px;height:240px;border-radius:20px;background:linear-gradient(155deg,var(--card),var(--bg-soft));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:54px;font-weight:700;color:var(--acid);letter-spacing:-2px;position:relative;overflow:hidden;}
+.hero-avatar img{position:absolute;inset:0;}
+.hero-avatar .photo-hint{position:absolute;bottom:14px;font-size:11px;font-weight:600;letter-spacing:0.4px;color:var(--mut);text-align:center;}
+.avatar-badge{position:absolute;bottom:16px;left:-16px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:11.5px;font-weight:600;color:var(--text);box-shadow:0 8px 24px rgba(0,0,0,0.4);white-space:nowrap;}
+.avatar-badge .dot{color:var(--acid);margin-right:5px;}
+
+/* STATS */
+.stats-wrap{padding:90px 5%;border-bottom:1px solid var(--line);}
+.stats-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.stat{background:var(--bg);padding:36px 28px;}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--acid);letter-spacing:-1px;}
+.stat-label{font-size:12.5px;color:var(--mut);margin-top:6px;}
+
+/* SECTION BASE */
+.section{padding:100px 5%;}
+.inner{max-width:1180px;margin:0 auto;}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap;}
+.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--acid);margin-bottom:14px;}
+.sec-title{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-1px;max-width:560px;}
+.sec-desc{font-size:14.5px;color:var(--mut);max-width:380px;line-height:1.7;}
+
+/* PILLARS / SERVICES STYLE */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.svc-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;transition:border-color .2s,transform .2s;}
+.svc-card:hover{border-color:var(--acid-dim);transform:translateY(-4px);}
+.svc-num{font-size:12px;color:var(--mut);font-weight:600;margin-bottom:24px;}
+.svc-icon{width:44px;height:44px;border-radius:10px;background:rgba(159,255,61,0.08);border:1px solid var(--acid-dim);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;color:var(--acid);}
+.svc-title{font-size:16.5px;font-weight:600;margin-bottom:10px;}
+.svc-desc{font-size:13.5px;color:var(--mut);line-height:1.7;}
+
+/* ABOUT / STORY */
+.story{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+.story-img{background:linear-gradient(145deg,var(--card),var(--bg-soft));border:1px solid var(--line);border-radius:18px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:13px;}
+.story-body p{color:var(--mut);font-size:14.5px;margin-bottom:16px;line-height:1.8;}
+.story-body a{display:inline-block;margin-top:6px;}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{display:grid;grid-template-columns:190px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line);}
+.exp-item:last-child{border-bottom:none;}
+.exp-period{font-size:12px;font-weight:700;color:var(--acid);letter-spacing:0.4px;margin-bottom:8px;}
+.exp-org{font-size:13px;font-weight:700;margin-bottom:4px;}
+.exp-loc{font-size:12px;color:var(--mut);}
+.exp-content{border-left:2px solid var(--line);padding-left:28px;}
+.exp-role{font-size:18px;font-weight:600;margin-bottom:14px;letter-spacing:-0.3px;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.exp-bullets li{font-size:13.8px;color:var(--mut);line-height:1.7;padding-left:24px;position:relative;}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:2px;background:var(--acid);}
+.exp-bullets li strong{color:var(--text);font-weight:600;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.exp-tag{font-size:11px;font-weight:600;letter-spacing:0.3px;padding:4px 10px;border-radius:100px;background:rgba(159,255,61,0.06);color:var(--acid);border:1px solid var(--acid-dim);}
+
+/* EDUCATION */
+.edu-card{display:flex;gap:26px;align-items:flex-start;padding:32px;border-radius:16px;background:var(--card);border:1px solid var(--line);max-width:780px;}
+.edu-icon{width:60px;height:60px;border-radius:12px;background:rgba(159,255,61,0.08);border:1px solid var(--acid-dim);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--acid);flex-shrink:0;}
+.edu-degree{font-size:19px;font-weight:700;margin-bottom:6px;letter-spacing:-0.3px;}
+.edu-school{font-size:13.5px;font-weight:600;color:var(--acid);margin-bottom:14px;}
+.edu-desc{font-size:13.8px;color:var(--mut);line-height:1.7;}
+.edu-mobility{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--text);padding:7px 14px;background:var(--bg-soft);border-radius:100px;border:1px solid var(--line);}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.skill-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px;}
+.skill-card-title{font-size:14px;font-weight:700;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;}
+.skill-card-icon{font-size:15px;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(159,255,61,0.08);color:var(--acid);}
+.skill-row{margin-bottom:12px;}
+.skill-row:last-child{margin-bottom:0;}
+.skill-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;}
+.skill-name{font-size:13px;color:var(--text);font-weight:500;}
+.skill-pct{font-size:11px;color:var(--mut);font-weight:700;}
+.skill-bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden;}
+.skill-fill{height:100%;background:var(--acid);border-radius:2px;}
+.soft-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.soft-tag{font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;background:var(--bg-soft);color:var(--text);border:1px solid var(--line);}
+
+/* DISTINCTIONS / BLOG GRID STYLE */
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.post-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s;}
+.post-card:hover{border-color:var(--acid-dim);transform:translateY(-4px);}
+.post-thumb{height:80px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(160deg,#1B2A1E,#0B0F0D);}
+.post-body{padding:20px;}
+.post-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--acid);background:rgba(159,255,61,0.08);padding:4px 10px;border-radius:100px;margin-bottom:14px;}
+.post-title{font-size:14.5px;font-weight:600;line-height:1.4;margin-bottom:10px;}
+.post-date{font-size:12px;color:var(--mut);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.cf{display:flex;flex-direction:column;gap:14px;}
+.cf-row{display:flex;gap:14px;}
+.cf input,.cf textarea{width:100%;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:14px;font-family:'Inter',sans-serif;color:var(--text);outline:none;transition:border-color .2s;}
+.cf input:focus,.cf textarea:focus{border-color:var(--acid-dim);}
+.cf textarea{height:110px;resize:vertical;}
+.cf input::placeholder,.cf textarea::placeholder{color:var(--mut);}
+.contact-info-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px;}
+.ci-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;}
+.ci-row:last-child{margin-bottom:0;}
+.ci-icon{width:38px;height:38px;border-radius:9px;background:rgba(159,255,61,0.08);border:1px solid var(--acid-dim);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--acid);flex-shrink:0;}
+.ci-label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.ci-val{font-size:14px;font-weight:500;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:30px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.footer-copy{font-size:12px;color:var(--mut);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:12px;color:var(--mut);text-decoration:none;}
+.footer-links a:hover{color:var(--acid);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media (max-width:900px){
+  .nav-links{display:none;}
+  .hero-inner{flex-direction:column;}
+  .stats-grid,.services-grid,.blog-grid,.story,.contact-grid,.skills-grid{grid-template-columns:1fr;}
+  .exp-item{grid-template-columns:1fr;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand"><span class="dot"></span> Pascal Lawson</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">● Agronomist · Agroecologist · Senior Leader</div>
+      <h1>Building sustainable <span class="hl">food systems</span> for West Africa</h1>
+      <p>Agronomist & Agroecology Specialist (C1-level English) leveraging AI and data analysis for sustainable agribusiness and food sovereignty — across Benin, Congo, and France.</p>
+      <div class="hero-btns">
+        <a href="#experience" class="btn-primary">View my work →</a>
+        <a href="#contact" class="btn-ghost">Contact me</a>
+      </div>
+      <div class="logos">
+        <span>FSA – UAC</span><span>CREDI-ONG</span><span>DURAGIRE Project</span><span>Université de Lorraine</span>
+      </div>
+    </div>
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar">
+        <!-- To add your photo: replace the two lines below with
+             <img src="your-photo.jpg" alt="Pascal Lawson Body" style="width:100%;height:100%;object-fit:cover;"> -->
+        PL
+        <span class="photo-hint">Add your photo here</span>
+      </div>
+      <div class="avatar-badge"><span class="dot">●</span> Cotonou, Bénin 🇧🇯</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-wrap">
+  <div class="stats-grid reveal">
+    <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Farmers advised — DURAGIRE</div></div>
+    <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Members led — FSA English Club</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Departments — Atlantic · Zou · Plateau</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Communes across Benin</div></div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">What I do</div>
+        <h2 class="sec-title">Three pillars of my work</h2>
+      </div>
+      <div class="sec-desc">Field practice, data, and leadership — combined to make agroecology measurable and scalable.</div>
+    </div>
+    <div class="services-grid reveal">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><i class="ti ti-leaf"></i></div>
+        <div class="svc-title">Agroecology & Sustainable Practices</div>
+        <div class="svc-desc">Designing technical itineraries and training modules — Bokashi, compost, natural biopesticides, circular systems.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><i class="ti ti-chart-dots"></i></div>
+        <div class="svc-title">AI & Data-Driven Agribusiness</div>
+        <div class="svc-desc">Integrating AI and statistical tools (JASP) to optimize data analysis, market intelligence, and cooperative management.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><i class="ti ti-users"></i></div>
+        <div class="svc-title">Strategic Leadership & Capacity Building</div>
+        <div class="svc-desc">Leading large-scale programs, cooperative surveys, and field diagnostics across multiple departments and communes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-soft);">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">My story</div>
+        <h2 class="sec-title">From the field in Benin to research in France</h2>
+      </div>
+    </div>
+    <div class="story reveal">
+      <div class="story-img">
+        <!-- To add a field photo: replace the line below with
+             <img src="your-field-photo.jpg" alt="Field work" style="width:100%;height:100%;object-fit:cover;border-radius:18px;"> -->
+        Field photo
+      </div>
+      <div class="story-body">
+        <p>I am a passionate Agronomist and Agricultural Advisor dedicated to driving sustainable farming systems, agroecological innovation, and food sovereignty. My expertise lies at the intersection of practical field experience, data-driven agricultural solutions, and strategic community leadership.</p>
+        <p>As Agricultural Advisor on the DURAGIRE project — a Netherlands-funded program — I support more than 150 farmers across 3 departments and 5 communes in Benin. As Senior Leader of the FSA English Club since 2023, I hold a C1 level in English and have led, trained, and mentored over 150 cross-disciplinary members and leaders.</p>
+        <p>Driven by continuous growth and resilience, I am always open to global research collaborations, international academic exchange, and impactful agribusiness initiatives.</p>
+        <a href="mailto:pascallawson3@gmail.com" class="btn-primary"><i class="ti ti-mail"></i> pascallawson3@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Career</div>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+      <div class="sec-desc">Field advisory, project management, academic coaching, and research across Benin, Congo, and France.</div>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">2025 – Present</div>
+          <div class="exp-org">Ouesso Agroforestry Project</div>
+          <div class="exp-loc">🇨🇬 Ouesso, Republic of Congo</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Project Manager — Family Agroforestry Restructuring</div>
+          <ul class="exp-bullets">
+            <li>Directed the restructuring and strategic management of a family agroforestry project (~30 ha, cacao/timber) in Ouesso, promoting sustainable land-use and biodiversity conservation.</li>
+            <li>Designed agroecological practices integrating tree-crop interactions to improve soil health and climate resilience.</li>
+            <li>Coordinated fieldwork, resource allocation, and technical guidance to local stakeholders.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Agroforestry</span><span class="exp-tag">Cacao / Timber</span><span class="exp-tag">~30 ha</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Oct 2025 – Jul 2026</div>
+          <div class="exp-org">CREDI-ONG — DURAGIRE Project</div>
+          <div class="exp-loc">🇧🇯 Benin (Netherlands-funded)</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Agricultural Advisor & Agronomist</div>
+          <ul class="exp-bullets">
+            <li>Spearheaded technical advisory and field diagnostics across <strong>3 departments</strong> (Atlantic, Zou, Plateau) and <strong>5 communes</strong> in Benin.</li>
+            <li>Accompanied and trained <strong>150+ farmers</strong> through agroecological programs on market gardening, organic fertilization (Bokashi, compost), and natural biopesticides.</li>
+            <li>Used AI-driven data tools and market intelligence to streamline cooperative survey analyses and production calendars.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Agroecology</span><span class="exp-tag">150+ Farmers</span><span class="exp-tag">AI Tools</span><span class="exp-tag">Maraîchage</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Apr – May 2025</div>
+          <div class="exp-org">Ferme de la Bouzule</div>
+          <div class="exp-loc">🇫🇷 France — Université de Lorraine</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Graduate Research & Engineering Trainee</div>
+          <ul class="exp-bullets">
+            <li>Developed a diagnostic and transposition model analyzing anaerobic digestion (méthanisation) and circular economy frameworks.</li>
+            <li>Used JASP to process production and operational datasets for agricultural modeling.</li>
+            <li>Structured roundtables and business canvas models to evaluate scaling viability of agroecological innovations.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Research</span><span class="exp-tag">Méthanisation</span><span class="exp-tag">JASP</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">26 – 28 Mar 2025</div>
+          <div class="exp-org">Université de Lorraine (ITADA / ltz)</div>
+          <div class="exp-loc">🇫🇷🇩🇪 Alsace, France & Baden-Württemberg, Germany</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">International Agricultural Evaluator — Cross-Border Field Study</div>
+          <ul class="exp-bullets">
+            <li>Conducted in-depth operational and technical study visits across <strong>5 leading commercial farms</strong> in Alsace and Baden-Württemberg to analyze precision agronomic practices and performance.</li>
+            <li>Performed comparative diagnostics of modern European model farms, identifying scalable methodologies transferable to the West African context.</li>
+            <li>Analyzed climate resilience strategies and crop stresses, generating concrete recommendations to optimize sustainable yield frameworks.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Cross-border study</span><span class="exp-tag">5 model farms</span><span class="exp-tag">Climate resilience</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Nov 2024 – Feb 2025</div>
+          <div class="exp-org">GBioS, Faculté des Sciences Agronomiques (FSA-UAC)</div>
+          <div class="exp-loc">🇧🇯 Benin</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Internship Project — Academic Organic Production (SAE)</div>
+          <ul class="exp-bullets">
+            <li>Managed the complete organic production cycle of okra (gombo) and amaranth, from nursery setup to harvest and market commercialization.</li>
+            <li>Optimized bio-input allocation — elite seed varieties, organic bio-fertilizers, and botanical biopesticides — to maximize crop yield and quality.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Organic production</span><span class="exp-tag">Gombo & amaranth</span><span class="exp-tag">GBioS</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Oct 2024</div>
+          <div class="exp-org">OUEDO Market Gardening Cooperative</div>
+          <div class="exp-loc">🇧🇯 Ouedo, Benin</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Agricultural Extension & Training Facilitator</div>
+          <ul class="exp-bullets">
+            <li>Designed and animated an intensive field training campaign on agricultural waste bio-valorization and organic composting for <strong>12+ market gardeners</strong>.</li>
+            <li>Accelerated local adoption of sustainable agroecological practices, structuring a practical transition model toward chemical-free fertilization for the cooperative.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Composting</span><span class="exp-tag">12+ farmers trained</span><span class="exp-tag">Extension</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Oct 2023 – Present</div>
+          <div class="exp-org">FSA English Club (FEC)</div>
+          <div class="exp-loc">🇧🇯 FSA–UAC, Cotonou</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Senior Leader — FSA English Club</div>
+          <ul class="exp-bullets">
+            <li>Led, mentored, and accelerated the professional English development of <strong>150+ cross-disciplinary members and leaders</strong>, managing executive board operations since 2023.</li>
+            <li>Facilitated advanced conversational modules and interview prep, operating at a C1 level (self-assessed, not externally certified).</li>
+            <li>Designed workshops on professional idioms and public speaking for technical agronomic concepts.</li>
+          </ul>
+          <div class="exp-tags"><span class="exp-tag">Leadership</span><span class="exp-tag">C1 English</span><span class="exp-tag">150+ Members</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education" style="background:var(--bg-soft);">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Education</div>
+        <h2 class="sec-title">Academic background</h2>
+      </div>
+      <div class="sec-desc">Grounded in agricultural sciences at one of West Africa's leading agronomic faculties.</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="ti ti-school"></i></div>
+      <div>
+        <div class="edu-degree">Bachelor's Degree in Sciences and Technics of Plant Production</div>
+        <div class="edu-school">Faculty of Agricultural Sciences (FSA) — University of Abomey-Calavi (UAC), Benin</div>
+        <div class="edu-desc">Specialized in advanced crop production, agroecological systems, and sustainable farming methods. Strong technical foundation in field diagnostics, soil management, and localized agricultural solutions.</div>
+        <span class="edu-mobility"><i class="ti ti-plane-departure"></i> International mobility — IUT Nancy-Brabois, Université de Lorraine, France</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Expertise</div>
+        <h2 class="sec-title">Skills</h2>
+      </div>
+      <div class="sec-desc">Technical and transversal competences built through field work, research, and academic leadership.</div>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="skill-card-icon"><i class="ti ti-leaf"></i></span> Agronomy & Agroecology</div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Crop production & field diagnostics</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Agroecology (Bokashi, compost, biopesticides)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Market gardening (maraîchage irrigué)</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Agroforestry systems</span><span class="skill-pct">84%</span></div><div class="skill-bar"><div class="skill-fill" style="width:84%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Aquaculture & fisheries</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="skill-card-icon"><i class="ti ti-chart-dots"></i></span> Data & Digital Tools</div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Statistical analysis (JASP)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">AI in agribusiness</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Market intelligence & reporting</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">MS Word / PowerPoint / Excel</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Technical report writing</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="skill-card-icon"><i class="ti ti-users"></i></span> Advisory & Leadership</div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Agricultural advisory & extension</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Training module design</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Cooperative survey & governance</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Project management</span><span class="skill-pct">86%</span></div><div class="skill-bar"><div class="skill-fill" style="width:86%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">Proposal & business canvas writing</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title"><span class="skill-card-icon"><i class="ti ti-message-2"></i></span> Soft Skills & Languages</div>
+        <div style="margin-bottom:18px;">
+          <div class="soft-tags">
+            <span class="soft-tag">Leadership</span><span class="soft-tag">Team coaching</span><span class="soft-tag">Public speaking</span>
+            <span class="soft-tag">Resilience</span><span class="soft-tag">Critical thinking</span><span class="soft-tag">Adaptability</span>
+            <span class="soft-tag">Cross-cultural comm.</span>
+          </div>
+        </div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">French (native)</span><span class="skill-pct">100%</span></div><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><span class="skill-name">English (C1 level, self-assessed)</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="awards" style="background:var(--bg-soft);">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Recognition</div>
+        <h2 class="sec-title">Awards & distinctions</h2>
+      </div>
+      <div class="sec-desc">Academic excellence, leadership recognition, and international exposure.</div>
+    </div>
+    <div class="blog-grid reveal">
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-trophy" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">2025</span><div class="post-title">Bourse Biovalor — excellence scholarship in agricultural sciences (FSA/UAC)</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-world" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">2022 – 2025</span><div class="post-title">Boursier National du Gouvernement du Bénin — higher education grant</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-rocket" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">Mar 2025</span><div class="post-title">The 2025 Aspire Leaders Program — 40h, Harvard-affiliated Aspire Institute (Tarun Khanna & Karim Lakhani, signatories)</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-brain" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">May 2026</span><div class="post-title">AI-Integrated Leadership Program (AILP) — 8 weeks / 30h · Cert. №853661912 · Capstone scored 9.5/10 (AgriAccess Project, Zou Department)</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-plane-departure" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">2024</span><div class="post-title">International Student Mobility — IUT Nancy-Brabois, Université de Lorraine</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-microphone-2" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">2023 – Present</span><div class="post-title">Senior Leader, FSA English Club — 150+ cross-disciplinary members led since 2023</div></div>
+      </div>
+      <div class="post-card">
+        <div class="post-thumb"><i class="ti ti-flask" style="font-size:24px;color:var(--acid)"></i></div>
+        <div class="post-body"><span class="post-tag">2025</span><div class="post-title">Research Trainee, Ferme de la Bouzule — méthanisation & circular economy</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">Let's connect</div>
+        <h2 class="sec-title">Get in touch</h2>
+      </div>
+      <div class="sec-desc">Open to research collaborations, international exchange, and impactful agribusiness initiatives.</div>
+    </div>
+    <div class="contact-grid reveal">
+      <form class="cf">
+        <div class="cf-row">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Your email" />
+        </div>
+        <textarea placeholder="Your message…"></textarea>
+        <button type="button" class="btn-primary" style="align-self:flex-start;">Send message →</button>
+      </form>
+      <div class="contact-info-card">
+        <div class="ci-row">
+          <div class="ci-icon"><i class="ti ti-mail"></i></div>
+          <div><div class="ci-label">Email</div><div class="ci-val">pascallawson3@gmail.com</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon"><i class="ti ti-map-pin"></i></div>
+          <div><div class="ci-label">Location</div><div class="ci-val">Cotonou, Benin 🇧🇯</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon"><i class="ti ti-building-bank"></i></div>
+          <div><div class="ci-label">Institution</div><div class="ci-val">FSA — Université d'Abomey-Calavi</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon"><i class="ti ti-brand-linkedin"></i></div>
+          <div><div class="ci-label">LinkedIn</div><div class="ci-val" style="color:var(--mut);">Add your LinkedIn URL</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand"><span class="dot"></span> Pascal Lawson</div>
+  <div class="footer-copy">© 2026 LAWSON BODY Laté Pascal Aménouwé — All rights reserved</div>
+  <div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</footer>
+
+<script>
+const els=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12});
+els.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
