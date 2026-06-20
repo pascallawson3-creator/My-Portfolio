@@ -95,6 +95,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;display:flex;ali
 
 /* EXPERIENCE */
 .exp-list{display:flex;flex-direction:column;}
+
+/* CASE STUDIES — portfolio-style narrative cards */
+.case-study{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:56px 0;border-bottom:1px solid var(--line);align-items:start;}
+.case-study:first-child{padding-top:0;}
+.case-study:last-child{border-bottom:none;}
+.case-figure{display:flex;flex-direction:column;gap:16px;}
+.case-photo{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(155deg,var(--card),var(--bg-soft));border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:11px;text-align:center;padding:10px;}
+.case-photo img{width:100%;height:100%;object-fit:cover;}
+.case-stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;}
+.case-stat-num{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--acid);letter-spacing:-1px;line-height:1;}
+.case-stat-label{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.4;}
+.case-loc{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px;}
+.case-period{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--acid);}
+.case-tag-pill{display:inline-flex;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--acid);background:rgba(159,255,61,0.07);border:1px solid var(--acid-dim);padding:5px 12px;border-radius:100px;}
+.case-org{font-size:13px;font-weight:700;margin-top:8px;}
+.case-title{font-size:22px;font-weight:700;letter-spacing:-0.4px;margin-bottom:14px;line-height:1.25;}
+.case-narrative{font-size:14.5px;color:var(--mut);line-height:1.8;margin-bottom:18px;}
+.case-narrative strong{color:var(--text);}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.3px;padding:4px 10px;border-radius:100px;background:rgba(159,255,61,0.06);color:var(--acid);border:1px solid var(--acid-dim);}
+
+/* secondary compact experiences */
+.sub-exp-head{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mut);margin:64px 0 24px;}
+.sub-exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.sub-exp-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s,transform .2s;}
+.sub-exp-card:hover{border-color:var(--acid-dim);transform:translateY(-3px);}
+.sub-exp-period{font-size:11px;font-weight:700;color:var(--acid);letter-spacing:0.5px;margin-bottom:8px;}
+.sub-exp-org{font-size:12px;color:var(--mut);margin-bottom:10px;}
+.sub-exp-role{font-size:14px;font-weight:600;margin-bottom:10px;line-height:1.35;}
+.sub-exp-desc{font-size:12.5px;color:var(--mut);line-height:1.65;}
+
+@media (max-width:900px){
+  .case-study{grid-template-columns:1fr;}
+  .sub-exp-grid{grid-template-columns:1fr;}
+}
 .exp-item{display:grid;grid-template-columns:190px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line);}
 .exp-item:last-child{border-bottom:none;}
 .exp-period{font-size:12px;font-weight:700;color:var(--acid);letter-spacing:0.4px;margin-bottom:8px;}
@@ -282,133 +317,122 @@ footer{border-top:1px solid var(--line);padding:30px 5%;display:flex;justify-con
   <div class="inner">
     <div class="sec-head">
       <div>
-        <div class="sec-eyebrow">Parcours</div>
-        <h2 class="sec-title">Expérience</h2>
+        <div class="sec-eyebrow">Réalisations</div>
+        <h2 class="sec-title">Ce que j'ai construit sur le terrain</h2>
       </div>
-      <div class="sec-desc">Conseil de terrain, gestion de projet, coaching académique et recherche au Bénin, au Congo et en France.</div>
+      <div class="sec-desc">Quatre missions qui résument mon approche : diagnostiquer, accompagner, mesurer l'impact.</div>
     </div>
+
     <div class="exp-list">
 
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">2025 – Présent</div>
-          <div class="exp-org">Projet d'agroforesterie d'Ouesso</div>
-          <div class="exp-loc">🇨🇬 Ouesso, République du Congo</div>
+      <div class="case-study reveal">
+        <div class="case-figure">
+          <div class="case-photo">
+            <!-- <img src="ouesso-photo.jpg" alt="Agroforesterie Ouesso"> -->
+            Photo terrain — Ouesso
+          </div>
+          <div class="case-period">2025 – Présent</div>
+          <div class="case-org">Projet d'agroforesterie d'Ouesso</div>
+          <div class="case-loc">🇨🇬 Ouesso, République du Congo</div>
+          <div class="case-stat">
+            <div class="case-stat-num">~30 ha</div>
+            <div class="case-stat-label">d'exploitation agroforestière cacao/bois restructurée</div>
+          </div>
         </div>
-        <div class="exp-content">
-          <div class="exp-role">Chef de projet — Restructuration de l'agroforesterie familiale</div>
-          <ul class="exp-bullets">
-            <li>Pilotage de la restructuration et de la gestion stratégique d'une exploitation agroforestière familiale (~30 ha, cacao/bois) à Ouesso.</li>
-            <li>Conception de questionnaire, collecte des données et analyse pour effectuer le diagnostic et améliorer les performances de l'exploitation.</li>
-            <li>Coordination des travaux de terrain, rédaction de projet et conseils techniques aux acteurs locaux.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Agroforesterie</span><span class="exp-tag">Cacao / Bois</span><span class="exp-tag">~30 ha</span></div>
+        <div>
+          <div class="case-title">Restructurer une exploitation familiale en système agroforestier viable</div>
+          <p class="case-narrative">Chef de projet sur la restructuration et la gestion stratégique d'une exploitation familiale de ~30 ha à Ouesso. J'ai conçu un questionnaire de diagnostic, collecté et analysé les données pour identifier les leviers de performance, puis coordonné les travaux de terrain et conseillé techniquement les acteurs locaux.</p>
+          <div class="case-tags"><span class="case-tag">Agroforesterie</span><span class="case-tag">Cacao / Bois</span><span class="case-tag">Diagnostic data</span></div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">Oct 2025 – Juil 2026</div>
-          <div class="exp-org">CRÉDI-ONG — Projet DURAGIRE</div>
-          <div class="exp-loc">🇧🇯 Bénin (financé par les Pays-Bas)</div>
+      <div class="case-study reveal">
+        <div class="case-figure">
+          <div class="case-photo">
+            <!-- <img src="duragire-photo.jpg" alt="Terrain DURAGIRE"> -->
+            Photo terrain — DURAGIRE
+          </div>
+          <div class="case-period">Oct 2025 – Juil 2026</div>
+          <div class="case-org">CRÉDI-ONG — Projet DURAGIRE</div>
+          <div class="case-loc">🇧🇯 Bénin (financé par les Pays-Bas)</div>
+          <div class="case-stat">
+            <div class="case-stat-num">150+</div>
+            <div class="case-stat-label">producteurs maraîchers et riziculteurs accompagnés dans 3 départements et 5 communes</div>
+          </div>
         </div>
-        <div class="exp-content">
-          <div class="exp-role">Conseiller agricole & Agronome</div>
-          <ul class="exp-bullets">
-            <li>J'ai conduit les activités de conseil technique agricole et de diagnostic sur le terrain dans <strong>3 départements</strong> (Atlantique, Zou, Plateau) et <strong>5 communes</strong> du Bénin pour identifier les besoins des communautés.</li>
-            <li>J'ai accompagné et formé plus de <strong>150 agriculteurs</strong> vers la transition agroécologique sur le maraîchage, la fabrication de biofertilisants organiques, les biopesticides et les bonnes pratiques.</li>
-            <li>Utilisation d'outils de données basés sur l'IA et d'informations sur le marché pour rationaliser les analyses d'enquêtes coopératives et les calendriers de production.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Agroécologie</span><span class="exp-tag">150+ agriculteurs</span><span class="exp-tag">Outils IA</span><span class="exp-tag">Maraîchage</span></div>
+        <div>
+          <div class="case-title">Valoriser économiquement l'eau pour 150+ producteurs maraîchers et riziculteurs</div>
+          <p class="case-narrative">Conseiller agricole sur le projet DURAGIRE (Durabilité des Actions GIRE), j'accompagne techniquement et organisationnellement des producteurs maraîchers et riziculteurs de <strong>3 départements</strong> et <strong>5 communes</strong> du Bénin, autour de la valorisation économique des ressources en eau. J'appuie l'adoption de pratiques agroécologiques — fertilisation organique, rotation culturale, gestion de l'eau, lutte intégrée — et la diversification vers des systèmes durables comme l'intégration riz-pisciculture. Je pilote aussi le suivi-évaluation (productivité, adoption des innovations, rentabilité), la formation des producteurs, la planification des ventes et la contractualisation producteurs-acheteurs — au service de la sécurité alimentaire, des revenus agricoles et des ressources naturelles.</p>
+          <div class="case-tags"><span class="case-tag">GIRE & eau</span><span class="case-tag">Riz-pisciculture</span><span class="case-tag">Suivi-évaluation</span><span class="case-tag">Contractualisation</span></div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">Avr – Mai 2025</div>
-          <div class="exp-org">Ferme de la Bouzule</div>
-          <div class="exp-loc">🇫🇷 France — Université de Lorraine</div>
+      <div class="case-study reveal">
+        <div class="case-figure">
+          <div class="case-photo">
+            <!-- <img src="bouzule-photo.jpg" alt="Ferme de la Bouzule"> -->
+            Photo terrain — Ferme de la Bouzule
+          </div>
+          <div class="case-period">Avr – Mai 2025</div>
+          <div class="case-org">Ferme de la Bouzule, Université de Lorraine</div>
+          <div class="case-loc">🇫🇷 France</div>
+          <div class="case-stat">
+            <div class="case-stat-num">+45%</div>
+            <div class="case-stat-label">de potentiel annuel d'électricité renouvelable identifié</div>
+          </div>
         </div>
-        <div class="exp-content">
-          <div class="exp-role">Stagiaire en recherche et ingénierie</div>
-          <ul class="exp-bullets">
-            <li>Réalisé un diagnostic agronomique du système de méthanisation de la ferme La Bouzule.</li>
-            <li>Étude agroécologique sur la biovalorisation des déchets agricoles via méthanisation démontrant un potentiel annuel de <strong>+45 %</strong> (par rapport à 2024) d'électricité renouvelable au Bénin, dans une approche intégrée énergie-bioéconomie-environnement.</li>
-            <li>J'ai utilisé JASP pour traiter les ensembles de données de production et d'exploitation en vue de la modélisation agricole.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Recherche</span><span class="exp-tag">Méthanisation</span><span class="exp-tag">+45% potentiel énergie</span><span class="exp-tag">JASP</span></div>
+        <div>
+          <div class="case-title">Quantifier le potentiel énergétique de la biovalorisation des déchets agricoles</div>
+          <p class="case-narrative">Stagiaire en recherche et ingénierie, j'ai réalisé un diagnostic agronomique complet du système de méthanisation de la ferme La Bouzule. Mon étude agroécologique a démontré un potentiel annuel de <strong>+45 %</strong> (par rapport à 2024) d'électricité renouvelable transférable au Bénin, dans une approche intégrée énergie–bioéconomie–environnement. J'ai utilisé JASP pour traiter les données de production et d'exploitation en vue de la modélisation agricole.</p>
+          <div class="case-tags"><span class="case-tag">Méthanisation</span><span class="case-tag">JASP</span><span class="case-tag">Économie circulaire</span></div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
+      <div class="case-study reveal">
+        <div class="case-figure">
+          <div class="case-photo">
+            <!-- <img src="fec-photo.jpg" alt="FSA English Club"> -->
+            Photo — FSA English Club
+          </div>
+          <div class="case-period">2023 – Présent</div>
+          <div class="case-org">FSA English Club, FSA-UAC</div>
+          <div class="case-loc">🇧🇯 Cotonou, Bénin</div>
+          <div class="case-stat">
+            <div class="case-stat-num">150+</div>
+            <div class="case-stat-label">personnes de niveaux variés encadrées depuis 2023</div>
+          </div>
+        </div>
         <div>
-          <div class="exp-period">Mars 2025</div>
-          <div class="exp-org">IUT Nancy-Brabois, Université de Lorraine</div>
-          <div class="exp-loc">🇫🇷🇩🇪 France / Allemagne</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Stagiaire — Diagnostic agricole transfrontalier (France/Allemagne)</div>
-          <ul class="exp-bullets">
-            <li>Conception d'un BSV (Bulletin de Santé du Végétal) sur la banane, intégrant observation phytosanitaire, suivi des risques et aide à la décision agricole.</li>
-            <li>Contribué à la mise en place d'une AMAP visant à renforcer l'agriculture paysanne durable et les circuits courts alimentaires.</li>
-            <li>Réalisé des visites d'étude dans <strong>5 exploitations agricoles leaders</strong> en France et en Allemagne pour analyser leurs pratiques et performances.</li>
-            <li>Diagnostics comparés de fermes modèles, identifiant des solutions transférables au contexte béninois.</li>
-            <li>Développé une capacité d'analyse interculturelle et systémique des modèles agricoles dans une perspective d'innovation et d'adaptation pour l'Afrique de l'Ouest.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">BSV Banane</span><span class="exp-tag">AMAP</span><span class="exp-tag">5 fermes</span><span class="exp-tag">Résilience climatique</span></div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">Nov 2024 – Fév 2025</div>
-          <div class="exp-org">GBioS, Faculté des Sciences Agronomiques (FSA-UAC)</div>
-          <div class="exp-loc">🇧🇯 Bénin</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Stage académique — Production biologique (SAE)</div>
-          <ul class="exp-bullets">
-            <li>Géré le cycle complet de production biologique du gombo et de l'amarante, de la pépinière à la récolte et la commercialisation.</li>
-            <li>Optimisé l'allocation d'intrants biologiques — semences performantes, biofertilisants organiques et biopesticides végétaux — pour maximiser le rendement et la qualité des cultures.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Production biologique</span><span class="exp-tag">Gombo & amarante</span><span class="exp-tag">GBioS</span></div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">Oct 2024</div>
-          <div class="exp-org">Coopérative maraîchère de OUEDO</div>
-          <div class="exp-loc">🇧🇯 Ouedo, Bénin</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Facilitateur — Vulgarisation et formation agricole</div>
-          <ul class="exp-bullets">
-            <li>Conçu et animé une formation sur la biovalorisation de déchets agricoles et le compostage biologique pour <strong>12+ maraîchers</strong>.</li>
-            <li>Accéléré l'adoption de pratiques agroécologiques durables, structurant un modèle pratique de transition vers une fertilisation sans produits chimiques pour la coopérative.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Compostage</span><span class="exp-tag">12+ agriculteurs formés</span><span class="exp-tag">Vulgarisation</span></div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">2023 – Présent</div>
-          <div class="exp-org">FSA English Club (FEC)</div>
-          <div class="exp-loc">🇧🇯 Faculté des Sciences Agronomiques, UAC</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-role">Leader Senior — FSA English Club</div>
-          <ul class="exp-bullets">
-            <li>Management d'une équipe, coordination des activités, conférences, partenariats externes et projets du Club, avec plus de <strong>150 personnes</strong> de niveaux variés encadrées depuis 2023.</li>
-            <li>Conception de supports visuels pédagogiques (présentations, affiches, vidéos, contenus audio…) pour l'organisation et la promotion du Club.</li>
-            <li>Animation et coaching de la communauté en ligne « United Student Developers », favorisant son engagement et sa croissance.</li>
-          </ul>
-          <div class="exp-tags"><span class="exp-tag">Leadership</span><span class="exp-tag">Anglais C1</span><span class="exp-tag">150+ personnes</span><span class="exp-tag">United Student Developers</span></div>
+          <div class="case-title">Bâtir et faire grandir une communauté linguistique pluridisciplinaire</div>
+          <p class="case-narrative">Leader Senior du club, je gère une équipe, coordonne les activités, conférences et partenariats externes, et j'ai accompagné plus de <strong>150 personnes</strong> issues de différentes disciplines. Je conçois aussi les supports visuels pédagogiques (présentations, affiches, vidéos, audio) du Club, et j'anime la communauté en ligne « United Student Developers », favorisant son engagement et sa croissance.</p>
+          <div class="case-tags"><span class="case-tag">Leadership</span><span class="case-tag">Anglais C1</span><span class="case-tag">United Student Developers</span></div>
         </div>
       </div>
 
     </div>
+
+    <div class="sub-exp-head">Autres missions de terrain</div>
+    <div class="sub-exp-grid reveal">
+      <div class="sub-exp-card">
+        <div class="sub-exp-period">Mars 2025</div>
+        <div class="sub-exp-org">IUT Nancy-Brabois, Univ. de Lorraine 🇫🇷🇩🇪</div>
+        <div class="sub-exp-role">Diagnostic agricole transfrontalier France/Allemagne</div>
+        <div class="sub-exp-desc">Visites d'étude dans 5 exploitations leaders, conception d'un BSV banane, contribution à une AMAP, diagnostics comparés transférables au Bénin.</div>
+      </div>
+      <div class="sub-exp-card">
+        <div class="sub-exp-period">Nov 2024 – Fév 2025</div>
+        <div class="sub-exp-org">GBioS, FSA-UAC 🇧🇯</div>
+        <div class="sub-exp-role">Stage académique — Production biologique</div>
+        <div class="sub-exp-desc">Cycle complet de production bio du gombo et de l'amarante, optimisation des intrants biologiques pour maximiser rendement et qualité.</div>
+      </div>
+      <div class="sub-exp-card">
+        <div class="sub-exp-period">Oct 2024</div>
+        <div class="sub-exp-org">Coopérative maraîchère de OUEDO 🇧🇯</div>
+        <div class="sub-exp-role">Facilitateur — Vulgarisation agricole</div>
+        <div class="sub-exp-desc">Formation sur la biovalorisation des déchets et le compostage biologique pour 12+ maraîchers, transition vers une fertilisation sans produits chimiques.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
